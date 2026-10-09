@@ -8,7 +8,7 @@ Add `agenix-rekey-helper` as a flake input, then expose an app. For a local chec
 
 ```nix
 {
-  inputs.agenix-rekey-helper.url = "path:/path/to/agenix-rekey-helper";
+  inputs.agenix-rekey-helper.url = "github:ruiiiijiiiiang/agenix-rekey-helper";
 
   outputs = inputs@{ nixpkgs, ... }:
     let
@@ -22,15 +22,15 @@ Add `agenix-rekey-helper` as a flake input, then expose an app. For a local chec
         sources = [ "secrets" "lib/keys.nix" ];
         hosts = {
           workstation_a = {
-            target = "alice@workstation-a";
+            target = "user@workstation-a";
             identity = ".ssh/id_ed25519";
           };
           workstation_b = {
-            target = "alice@workstation-b";
+            target = "user@workstation-b";
             identity = ".ssh/id_ed25519";
           };
           server_a = {
-            target = "alice@server-a";
+            target = "user@server-a";
             identity = ".ssh/id_ed25519";
           };
         };
